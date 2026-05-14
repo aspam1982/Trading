@@ -15,17 +15,17 @@
             <Button Content="EMA Crossover Backtest"
                     Click="LaunchEmaCrossoverBacktest"
                     Height="40" Margin="0 0 0 8"/>
-            <Button Content="Pairs Correlation"
-                    Click="LaunchPairsCorrelation"
-                    Height="40" Margin="0 0 0 8"/>
-            <Button Content="Grid Strategy Backtest"
-                    Click="LaunchGridStrategy"
-                    Height="40" Margin="0 0 0 8"/>
             <Button Content="Grok RSI Strategy Backtest"
                     Click="LaunchGrokAdvice"
                     Height="40" Margin="0 0 0 8"/>
             <Button Content="Grok MA Crossover Backtest"
                     Click="LaunchGrokAdvice1"
+                    Height="40" Margin="0 0 0 8"/>
+            <Button Content="Pairs Correlation"
+                    Click="LaunchPairsCorrelation"
+                    Height="40" Margin="0 0 0 8"/>
+            <Button Content="Grid Strategy Backtest"
+                    Click="LaunchGridStrategy"
                     Height="40" Margin="0 0 0 8"/>
             <Button Content="Orderbook Density"
                     Click="LaunchOrderbookDensity"

@@ -131,8 +131,8 @@ public partial class PairsCorrelation : Window
         var shareData = ReadCandles(share, tf, ci);
         var futureData = ReadCandles(future, tf, ci);
 
-        var shareCandles = shareData.GetData(from, to);
-        var futureCandles = futureData.GetData(from, to);
+        var shareCandles = FilterRequestedInterval(shareData.GetData(from, to), from, to);
+        var futureCandles = FilterRequestedInterval(futureData.GetData(from, to), from, to);
 
         if (shareData.DataHasChanges)
             shareData.SaveHistoricalData();
@@ -143,6 +143,14 @@ public partial class PairsCorrelation : Window
         CalculateRatioDeviation(pairs, RollingPeriod);
 
         return new CalculationResult(share, future, from, to, shareCandles, futureCandles, pairs);
+    }
+
+    private static List<HistoricalCandle> FilterRequestedInterval(IEnumerable<HistoricalCandle> candles, DateTime from, DateTime to)
+    {
+        return candles
+            .Where(x => x.Time >= from && x.Time <= to)
+            .OrderBy(x => x.Time)
+            .ToList();
     }
 
     private HistoricalData ReadCandles(InstrumentOption instrument, HistoricalTimeFrame tf, CandleInterval ci)
@@ -241,6 +249,10 @@ public partial class PairsCorrelation : Window
 
     private void Render(CalculationResult result)
     {
+        foreach (var oldPlot in plot.Multiplot.GetPlots())
+            oldPlot.Clear();
+
+        plot.Plot.Clear();
         plot.Multiplot.Reset();
         plot.Multiplot.AddPlots(4);
         plot.Multiplot.Layout = new ScottPlot.MultiplotLayouts.Grid(2, 2);
@@ -281,6 +293,7 @@ public partial class PairsCorrelation : Window
         foreach (var subPlot in plot.Multiplot.GetPlots())
         {
             subPlot.Axes.DateTimeTicksBottom();
+            subPlot.Axes.SetLimitsX(result.From.ToOADate(), result.To.ToOADate());
             subPlot.Layout.Fixed(new PixelPadding(left: 100, right: 10, bottom: 35, top: 55));
         }
 

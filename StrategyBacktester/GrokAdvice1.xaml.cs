@@ -366,6 +366,10 @@ public partial class GrokAdvice1 : Window, INotifyPropertyChanged
 
     private void Render(BacktestResult result)
     {
+        foreach (var oldPlot in plot.Multiplot.GetPlots())
+            oldPlot.Clear();
+
+        plot.Plot.Clear();
         plot.Multiplot.Reset();
         plot.Multiplot.AddPlots(2);
 

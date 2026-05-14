@@ -318,6 +318,10 @@ public partial class GridStrategy : Window, INotifyPropertyChanged
 
     private void Render(BacktestResult result)
     {
+        foreach (var oldPlot in plot.Multiplot.GetPlots())
+            oldPlot.Clear();
+
+        plot.Plot.Clear();
         plot.Multiplot.Reset();
         plot.Multiplot.AddPlots(2);
 
@@ -352,6 +356,7 @@ public partial class GridStrategy : Window, INotifyPropertyChanged
         {
             subPlot.Layout.Fixed(padding);
             subPlot.Axes.DateTimeTicksBottom();
+            subPlot.Axes.SetLimitsX(result.From.ToOADate(), result.To.ToOADate());
         }
 
         mainPlot.Layout.Fixed(new PixelPadding(left: 100, right: 10, bottom: 50, top: 100));

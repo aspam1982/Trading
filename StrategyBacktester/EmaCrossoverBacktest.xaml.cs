@@ -507,6 +507,10 @@ public partial class EmaCrossoverBacktest : Window, INotifyPropertyChanged
 
     private void Render(BacktestResult result)
     {
+        foreach (var oldPlot in plot.Multiplot.GetPlots())
+            oldPlot.Clear();
+
+        plot.Plot.Clear();
         plot.Multiplot.Reset();
         plot.Multiplot.AddPlots(3);
 
