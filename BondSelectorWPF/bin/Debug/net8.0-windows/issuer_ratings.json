@@ -1,0 +1,155 @@
+{
+  "as_of": "2026-01-15",
+  "scale": "RU_NATIONAL",
+  "min_rating": "AA-",
+  "issuers": {
+    "МИНФИН РФ": {
+      "rating": "AAA",
+      "agency": "SOVEREIGN"
+    },
+    "МИНФИН": {
+      "rating": "AAA",
+      "agency": "SOVEREIGN"
+    },
+    "ВЭБ РФ": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "ДОМ РФ": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "ГАЗПРОМ": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "РОСНЕФТЬ": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "ЛУКОЙЛ": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "НОВАТЭК": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "ТРАНСНЕФТЬ": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "СУРГУТНЕФТЕГАЗ": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "ТАТНЕФТЬ": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "ГАЗПРОМ НЕФТЬ": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "ИНТЕР РАО": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "РУСГИДРО": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "МОСЭНЕРГО": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "РЖД": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "НОРИЛЬСКИЙ НИКЕЛЬ": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "СЕВЕРСТАЛЬ": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "НЛМК": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "АЛРОСА": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "ПОЛЮС": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "МТС": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "РОСТЕЛЕКОМ": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "СБЕРБАНК": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "ВТБ": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "ГАЗПРОМБАНК": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "АЛЬФА-БАНК": {
+      "rating": "AA",
+      "agency": "ExpertRA"
+    },
+    "РОССЕЛЬХОЗБАНК": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "МАГНИТ": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "Х5 РИТЕЙЛ ГРУПП": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "СИБУР": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "ФОСАГРО": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "АКРОН": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "ЕВРОХИМ": {
+      "rating": "AA+",
+      "agency": "ACRA"
+    },
+    "ГОРОД МОСКВА": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "МОСКОВСКАЯ ОБЛАСТЬ": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    },
+    "САНКТ-ПЕТЕРБУРГ": {
+      "rating": "AAA",
+      "agency": "ACRA"
+    }
+  }
+}

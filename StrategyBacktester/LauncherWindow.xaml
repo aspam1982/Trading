@@ -1,0 +1,39 @@
+﻿<Window x:Class="StrategyBacktester.LauncherWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StrategyBacktester"
+        mc:Ignorable="d"
+        Title="Trading Tools Launcher"
+        Height="520" Width="620"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="Select a tool to launch:"
+                       FontSize="18" FontWeight="Bold" Margin="0 0 0 20"/>
+            <Button Content="EMA Crossover Backtest"
+                    Click="LaunchEmaCrossoverBacktest"
+                    Height="40" Margin="0 0 0 8"/>
+            <Button Content="Pairs Correlation"
+                    Click="LaunchPairsCorrelation"
+                    Height="40" Margin="0 0 0 8"/>
+            <Button Content="Grid Strategy Backtest"
+                    Click="LaunchGridStrategy"
+                    Height="40" Margin="0 0 0 8"/>
+            <Button Content="Grok RSI Strategy Backtest"
+                    Click="LaunchGrokAdvice"
+                    Height="40" Margin="0 0 0 8"/>
+            <Button Content="Grok MA Crossover Backtest"
+                    Click="LaunchGrokAdvice1"
+                    Height="40" Margin="0 0 0 8"/>
+            <Button Content="Orderbook Density"
+                    Click="LaunchOrderbookDensity"
+                    Height="40" Margin="0 0 0 8"/>
+            <Button Content="Orderbook Time Density"
+                    Click="LaunchOrderbookTimeDensity"
+                    Height="40" Margin="0 0 0 8"/>
+        </StackPanel>
+    </Grid>
+</Window>
+

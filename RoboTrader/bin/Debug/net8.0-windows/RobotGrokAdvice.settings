@@ -1,0 +1,14 @@
+﻿{
+  "DepoUsage": 0.9,
+  "MaxRiskMultiplicator": 3.0,
+  "FutureSwitchPeriod": "8.00:00:00",
+  "rsiLength": 9,
+  "rsiCandlesToCheck": 71,
+  "rsiOverbought": 77.0757,
+  "maLenght": 77,
+  "useTrendFilter": true,
+  "ApiKey": "InvestTestAccount",
+  "Ticker": "SBER",
+  "TimeFrame": 7,
+  "AutoStart": false
+}

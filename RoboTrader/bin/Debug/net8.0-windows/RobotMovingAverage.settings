@@ -1,0 +1,13 @@
+﻿{
+  "MALen": 1,
+  "MAStep": 3,
+  "MAStart": 10,
+  "DepoUsage": 0.9,
+  "MaxRiskMultiplicator": 3.0,
+  "FutureSwitchPeriod": "8.00:00:00",
+  "DisplayName": "MA Газпром",
+  "ApiKey": "InvestTestAccount",
+  "Ticker": "GAZP",
+  "TimeFrame": 7,
+  "AutoStart": false
+}

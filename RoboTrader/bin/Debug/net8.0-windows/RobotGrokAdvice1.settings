@@ -1,0 +1,19 @@
+﻿{
+  "DepoUsage": 0.9,
+  "MaxRiskMultiplicator": 3.0,
+  "FutureSwitchPeriod": "8.00:00:00",
+  "lengthFast": 3,
+  "lengthSlow": 94,
+  "atrLength": 93,
+  "atrMultiplierSL": 9.62511,
+  "atrMultiplierTP": 62.30949,
+  "loopback": 10,
+  "riskPercent": 100.0,
+  "useBuyVolatileFilter": true,
+  "useSellVolatileFilter": false,
+  "DisplayName": "Трейдерский",
+  "ApiKey": "InvestTestAccount",
+  "Ticker": "GAZP",
+  "TimeFrame": 7,
+  "AutoStart": false
+}

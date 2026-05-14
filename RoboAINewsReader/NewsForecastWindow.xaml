@@ -1,0 +1,35 @@
+<Window x:Class="RoboAINewsReader.NewsForecastWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoboAINewsReader"
+        mc:Ignorable="d"
+        Title="Прогноз по новостям" Height="560" Width="980" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Вариант запуска" VerticalAlignment="Center" Margin="0,0,8,0"/>
+            <ComboBox x:Name="analyzerSelector" Width="180" SelectedIndex="0" VerticalContentAlignment="Center">
+                <ComboBoxItem Content="ChatGPT" Tag="ChatGPT"/>
+                <ComboBoxItem Content="DeepSeek" Tag="DeepSeek"/>
+                <ComboBoxItem Content="ChatGPT + DeepSeek" Tag="Both"/>
+            </ComboBox>
+            <TextBlock Text="Новостей" VerticalAlignment="Center" Margin="16,0,8,0"/>
+            <TextBox x:Name="newsCountTextBox" Text="10" Width="60" VerticalContentAlignment="Center"/>
+            <Button x:Name="runButton" Content="Запустить анализ" Click="RunButton_Click" Margin="10,0,0,0" Padding="12,4"/>
+        </StackPanel>
+
+        <TextBox x:Name="text"
+                 Grid.Row="1"
+                 AcceptsReturn="True"
+                 AcceptsTab="True"
+                 HorizontalScrollBarVisibility="Auto"
+                 VerticalScrollBarVisibility="Auto"
+                 TextWrapping="NoWrap"/>
+    </Grid>
+</Window>

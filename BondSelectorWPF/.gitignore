@@ -1,0 +1,47 @@
+# Build output
+[Bb]in/**
+**/[Bb]in/**
+[Oo]bj/**
+**/[Oo]bj/**
+![Bb]in/**/
+!**/[Bb]in/**/
+![Bb]in/**/[Dd]ebug/**/*.json
+![Bb]in/**/[Dd]ebug/**/*.settings
+!**/[Bb]in/**/[Dd]ebug/**/*.json
+!**/[Bb]in/**/[Dd]ebug/**/*.settings
+
+# Visual Studio / Rider / user-local files
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.DotSettings.user
+
+# Test and coverage output
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+*.trx
+
+# Publish and deployment artifacts
+*.pubxml.user
+*.publishsettings
+app.publish/
+
+# Logs and temporary files
+*.log
+logs/
+*.tmp
+*.temp
+*.bak
+*.orig
+*.swp
+~$*
+Thumbs.db
+Desktop.ini
+
+# Keep JSON/settings files in Debug output folders available for Git.

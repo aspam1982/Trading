@@ -1,0 +1,33 @@
+<Window x:Class="RoboAINewsReader.CandleForecasterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpf="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
+        xmlns:local="clr-namespace:RoboAINewsReader"
+        mc:Ignorable="d"
+        Title="Прогноз по свечам" Height="560" Width="980">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Акция" VerticalAlignment="Center" Margin="0,0,8,0"/>
+            <ComboBox x:Name="tickerComboBox"
+                      Width="180"
+                      DisplayMemberPath="Ticker"
+                      SelectedValuePath="Ticker"
+                      VerticalContentAlignment="Center"/>
+            <Button x:Name="calculateButton"
+                    Content="Рассчитать"
+                    Click="CalculateButton_Click"
+                    Margin="10,0,0,0"
+                    Padding="12,4"/>
+            <TextBlock x:Name="statusTextBlock" VerticalAlignment="Center" Margin="12,0,0,0"/>
+        </StackPanel>
+
+        <wpf:WpfPlot x:Name="plot" Grid.Row="1"/>
+    </Grid>
+</Window>

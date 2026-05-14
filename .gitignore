@@ -1,0 +1,79 @@
+# Build output
+[Bb]in/**
+**/[Bb]in/**
+[Oo]bj/**
+**/[Oo]bj/**
+![Bb]in/**/
+!**/[Bb]in/**/
+![Bb]in/**/[Dd]ebug/**/*.json
+![Bb]in/**/[Dd]ebug/**/*.settings
+!**/[Bb]in/**/[Dd]ebug/**/*.json
+!**/[Bb]in/**/[Dd]ebug/**/*.settings
+_build/
+_build*/
+build/
+dist/
+out/
+
+# Visual Studio / Rider / user-local files
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.DotSettings.user
+
+# Test and coverage output
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+coverage.cobertura.xml
+*.trx
+
+# Publish and deployment artifacts
+*.pubxml.user
+*.publishsettings
+PublishProfiles/*.pubxml.user
+app.publish/
+
+# NuGet local artifacts
+packages/
+*.nupkg
+*.snupkg
+
+# Logs and runtime traces
+*.log
+logs/
+Log/
+Robot.log
+*.trace
+*.etl
+
+# Temporary/editor files
+*.tmp
+*.temp
+*.bak
+*.orig
+*.swp
+~$*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Local tool/generated metadata
+.deepseek/
+.verify-*/
+.fill-metadata/
+.data-generator/
+
+# Windows crash dumps
+*.dmp
+*.mdmp
+
+# Keep JSON files tracked: this repository uses JSON for test data.
+# JSON/settings files in Debug folders are also explicitly allowed above.
+RoboFutureArbitr/bin/Debug/net8.0-windows/TradesHistory.json
+RoboFutureArbitr/bin/Debug/net8.0-windows/TradesHistory2025_07_14.json
