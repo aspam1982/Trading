@@ -283,6 +283,32 @@ Backtesting interpretation: the chart supports the same conclusion as the GAZP c
 - Low-liquidity moments reduce practical fill quality and make the displayed theoretical edge difficult to capture.
 - The practical conclusion is cautious: `PairsCorrelation` is useful for visual diagnostics and market-efficiency research, but these screenshots do not support a stable strategy based only on repeatedly harvesting stock/futures deviations.
 
+#### RoboFutureArbitr - Collected Data Analysis
+
+![RoboFutureArbitr deviation analysis](docs/screenshots/robofuturearbitr-deviation-wide-2025.png)
+
+`RoboFutureArbitr` was used to collect stock/futures arbitrage data for several weeks and then analyze it offline. The preliminary analysis found that almost every day at least a few stock/futures pairs showed substantial correlation or ratio deviations that looked large enough, in theory, to create a tradable profit after transaction costs.
+
+The data presenter highlights these moments as deviation spikes and shows the estimated deal size and theoretical profit for long and short directions. At this stage, the research looked promising: the market appeared to produce repeated temporary inefficiencies between the stock and the related futures contract.
+
+#### RoboFutureArbitr - Liquidity Reality Check
+
+![RoboFutureArbitr filtered liquidity analysis](docs/screenshots/robofuturearbitr-deviation-filtered-2025.png)
+
+The trading robot and later tick-data review changed the conclusion. The robot confirmed that the strategy was not practically workable and helped identify why. Many of the strongest apparent opportunities were not persistent arbitrage windows. They were often caused by one-off large trades, distorted prints, or ultra-low-liquidity periods before evening clearing. In those moments, even if one leg could be executed, the opposite leg could not reliably be filled at a profitable price because market depth disappeared.
+
+Backtesting interpretation: the signal existed on the chart, but the opportunity was not practically executable. This is the central difference between a theoretical deviation and a tradable arbitrage setup. The strategy needs simultaneous liquidity on both instruments, realistic fill assumptions, and enough time to complete both legs. Without that, the visible deviation is mostly an artifact of market microstructure.
+
+#### RoboFutureArbitr Research Takeaways
+
+- Several weeks of collected data showed frequent theoretical stock/futures deviations.
+- Offline analysis alone overestimated the profitability of these events.
+- Tick-level inspection and live trading revealed that many deviations came from isolated large trades or very low liquidity.
+- Evening clearing periods produced especially misleading signals because one side of the pair could become difficult or impossible to hedge at a favorable price.
+- A tradable arbitrage signal must be validated by executable depth, not only by price deviation.
+- The trading robot confirmed the strategy failure mechanism in practice, matching the later tick-level explanation.
+- The practical conclusion is strict: `RoboFutureArbitr` is useful for studying futures-arbitrage mechanics, but the tested deviations did not form a stable, scalable profit source after liquidity and execution constraints were included.
+
 ## Credentials And Secrets
 
 API tokens are not intended to be stored in source files or JSON configuration files. Runtime code reads secret values from Windows Credential Manager by name.
