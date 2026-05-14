@@ -45,6 +45,22 @@ The repository is organized as a single Visual Studio solution with several focu
 
 Several backtest windows use a walk-forward style layout: the full selected price period is shown on the upper chart, while the equity curve and test result are shown from the beginning of the optimization period through the end of the validation period. Optimization and validation intervals are highlighted visually to make the split between fitting and checking explicit.
 
+## AI News Analysis
+
+`RoboAINewsReader` can run market-news analysis through ChatGPT, DeepSeek, or both providers, using a configurable number of recent news items and optional candle context. The tool maps news to potentially affected instruments, estimates direction, volatility impact, timeframe, confidence, risk level, and suggested action.
+
+Initial experiments show that the output can look useful at first glance, but it is not consistent enough to be used as an autonomous trading signal. ChatGPT and DeepSeek may select different instruments, skip the same news item, assign different confidence levels, or explain the same event through different market assumptions. Because of this, the module should be treated as a first-pass filter and alerting tool: it helps highlight news that may deserve human attention, but every result requires manual review before it can influence a trading decision.
+
+The practical conclusion is cautious: AI news analysis is valuable for triage, summarization, and surfacing potentially market-moving events, but it is not a replacement for analyst validation, liquidity checks, risk assessment, and independent confirmation.
+
+`CandleForecasterWindow` explores a second AI use case: forecasting future price movement from candle history. This experiment showed little practical value. When the model receives only historical candle data, it tends to extend the existing trend almost linearly into the future. That is usually the most obvious and internally consistent assumption available from the chart alone, but it does not create a useful trading edge and does not reliably anticipate reversals, regime changes, or liquidity-driven moves.
+
+## Trading Robots
+
+The solution also includes trading robots that implement selected research hypotheses on real brokerage accounts. Robot behavior is configured through application settings: the user selects the strategy configuration, account, instruments, risk parameters, and execution mode before launch.
+
+Live account behavior matched the corresponding backtesting results closely enough to validate the backtest mechanics. This is an important research result by itself: it suggests that the simulation logic, commission handling, position accounting, and execution assumptions are close enough for the tested scenarios. It also strengthens the conclusions about overfitting: when optimized models failed in backtests and showed similar behavior in real-account experiments, the issue was not only a visualization artifact, but a real lack of strategy robustness.
+
 ## Backtest Result Gallery
 
 The screenshots below show `EmaCrossoverBacktest`, a deliberately compact research window for testing a parameterized EMA crossover strategy. The tool loads a full candle interval, searches parameters on an optimization window, then evaluates the selected parameter set on a later validation window.

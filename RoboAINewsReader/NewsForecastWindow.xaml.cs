@@ -84,34 +84,34 @@ public partial class NewsForecastWindow : Window
             var instrument = instruments.First(u => u.Ticker == ticker);
             return new MultiTimeframeCandleData
             {
-                H1Candles = (await client.MarketData.GetCandlesAsync(new GetCandlesRequest
+                H1Candles = (client.MarketData.GetCandlesAsync(new GetCandlesRequest
                 {
                     InstrumentId = instrument.Uid,
                     Interval = CandleInterval.Hour,
                     To = DateTime.Now.ToUniversalTime().ToTimestamp(),
                     From = DateTime.Now.AddDays(-5).ToUniversalTime().ToTimestamp()
-                })).Candles.TakeLast(10).Select(u => new CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList(),
-                D1Candles = (await client.MarketData.GetCandlesAsync(new GetCandlesRequest
+                }).GetAwaiter().GetResult()).Candles.TakeLast(10).Select(u => new CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList(),
+                D1Candles = (client.MarketData.GetCandlesAsync(new GetCandlesRequest
                 {
                     InstrumentId = instrument.Uid,
                     Interval = CandleInterval.Day,
                     To = DateTime.Now.ToUniversalTime().ToTimestamp(),
                     From = DateTime.Now.AddDays(-20).ToUniversalTime().ToTimestamp()
-                })).Candles.TakeLast(10).Select(u => new CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList(),
-                W1Candles = (await client.MarketData.GetCandlesAsync(new GetCandlesRequest
+                }).GetAwaiter().GetResult()).Candles.TakeLast(10).Select(u => new CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList(),
+                W1Candles = (client.MarketData.GetCandlesAsync(new GetCandlesRequest
                 {
                     InstrumentId = instrument.Uid,
                     Interval = CandleInterval.Week,
                     To = DateTime.Now.ToUniversalTime().ToTimestamp(),
                     From = DateTime.Now.AddDays(-7 * 20).ToUniversalTime().ToTimestamp()
-                })).Candles.TakeLast(10).Select(u => new CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList(),
-                M1Candles = (await client.MarketData.GetCandlesAsync(new GetCandlesRequest
+                }).GetAwaiter().GetResult()).Candles.TakeLast(10).Select(u => new CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList(),
+                M1Candles = (client.MarketData.GetCandlesAsync(new GetCandlesRequest
                 {
                     InstrumentId = instrument.Uid,
                     Interval = CandleInterval.Month,
                     To = DateTime.Now.ToUniversalTime().ToTimestamp(),
                     From = DateTime.Now.AddMonths(-10).ToUniversalTime().ToTimestamp()
-                })).Candles.TakeLast(10).Select(u => new CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList()
+                }).GetAwaiter().GetResult()).Candles.TakeLast(10).Select(u => new CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList()
             };
         }
 
@@ -141,34 +141,34 @@ public partial class NewsForecastWindow : Window
             var instrument = instruments.First(u => u.Ticker == ticker);
             return new DeepSeekAnalyser.MultiTimeframeCandleData
             {
-                H1Candles = (await client.MarketData.GetCandlesAsync(new GetCandlesRequest
+                H1Candles = (client.MarketData.GetCandlesAsync(new GetCandlesRequest
                 {
                     InstrumentId = instrument.Uid,
                     Interval = CandleInterval.Hour,
                     To = DateTime.Now.ToUniversalTime().ToTimestamp(),
                     From = DateTime.Now.AddDays(-5).ToUniversalTime().ToTimestamp()
-                })).Candles.TakeLast(10).Select(u => new DeepSeekAnalyser.CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList(),
-                D1Candles = (await client.MarketData.GetCandlesAsync(new GetCandlesRequest
+                }).GetAwaiter().GetResult()).Candles.TakeLast(10).Select(u => new DeepSeekAnalyser.CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList(),
+                D1Candles = (client.MarketData.GetCandlesAsync(new GetCandlesRequest
                 {
                     InstrumentId = instrument.Uid,
                     Interval = CandleInterval.Day,
                     To = DateTime.Now.ToUniversalTime().ToTimestamp(),
                     From = DateTime.Now.AddDays(-20).ToUniversalTime().ToTimestamp()
-                })).Candles.TakeLast(10).Select(u => new DeepSeekAnalyser.CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList(),
-                W1Candles = (await client.MarketData.GetCandlesAsync(new GetCandlesRequest
+                }).GetAwaiter().GetResult()).Candles.TakeLast(10).Select(u => new DeepSeekAnalyser.CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList(),
+                W1Candles = (client.MarketData.GetCandlesAsync(new GetCandlesRequest
                 {
                     InstrumentId = instrument.Uid,
                     Interval = CandleInterval.Week,
                     To = DateTime.Now.ToUniversalTime().ToTimestamp(),
                     From = DateTime.Now.AddDays(-7 * 20).ToUniversalTime().ToTimestamp()
-                })).Candles.TakeLast(10).Select(u => new DeepSeekAnalyser.CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList(),
-                M1Candles = (await client.MarketData.GetCandlesAsync(new GetCandlesRequest
+                }).GetAwaiter().GetResult()).Candles.TakeLast(10).Select(u => new DeepSeekAnalyser.CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList(),
+                M1Candles = (client.MarketData.GetCandlesAsync(new GetCandlesRequest
                 {
                     InstrumentId = instrument.Uid,
                     Interval = CandleInterval.Month,
                     To = DateTime.Now.ToUniversalTime().ToTimestamp(),
                     From = DateTime.Now.AddMonths(-10).ToUniversalTime().ToTimestamp()
-                })).Candles.TakeLast(10).Select(u => new DeepSeekAnalyser.CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList()
+                }).GetAwaiter().GetResult()).Candles.TakeLast(10).Select(u => new DeepSeekAnalyser.CandleStick { Open = u.Open, Close = u.Close, Low = u.Low, High = u.High, Volume = u.Volume, Date = DateTime.SpecifyKind(u.Time.ToDateTime(), DateTimeKind.Utc) }).ToList()
             };
         }
 
