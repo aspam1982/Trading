@@ -2,6 +2,14 @@
 
 `Trading` is a .NET 8 / WPF portfolio project for market research, strategy backtesting, trading-robot prototyping, futures arbitrage analysis, AI-assisted news analysis, and secure local credential management.
 
+## Quick Recruiter Summary
+
+This project demonstrates end-to-end algorithmic trading research: hypothesis generation, historical data processing, backtesting, walk-forward validation, real trading robots connected to brokerage accounts, and post-trade analysis. It includes strategy research tools for EMA/RSI/MA models, grid trading, stock/futures arbitrage, orderbook-density analysis, AI-assisted news triage, and secure credential management.
+
+The project contains configurable robot hosts that can run selected strategy implementations on real accounts through application settings: account, instruments, risk parameters, and execution mode are selected before launch. The key result is not a polished claim of a profitable strategy, but a disciplined research workflow: the project tests ideas, validates them against later data and real-account robot behavior, identifies overfitting, and documents why several attractive-looking strategies fail once liquidity, execution, commissions, and regime changes are considered.
+
+Core competencies demonstrated: C#/.NET 8, WPF desktop engineering, multi-project architecture, market-data handling, T-Invest API integration, backtesting engines, trading-robot prototyping, quantitative validation, ScottPlot visualization, AI/LLM integration, and secure secret management.
+
 The repository is organized as a single Visual Studio solution with several focused desktop applications and one shared library. It was built as a research and engineering workspace rather than a packaged trading product: the emphasis is on data handling, backtesting workflows, visual analysis, API integration, and practical tooling around trading experiments.
 
 > This repository is for software engineering and research demonstration purposes only. It is not financial advice and is not intended for unattended production trading without additional risk controls, monitoring, audit logging, and operational safeguards.
